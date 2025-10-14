@@ -5,22 +5,30 @@ public class IsPrime {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int n=19,count=0;
-		for(int i=2;i<n-1;i++) {
+		int n=1;
+		boolean isPrime = true;
+		if(n<=1)
+		{
+			System.out.println("The given number "+n+" is not prime");
+			return;
+		}
+
+		for(int i=2;i<=Math.sqrt(n);i++) {
 			if(n%i == 0)
 			{
-				count=1;
+				isPrime=false;
 			}
 			
 		}
-		if (count==1)
+		if (isPrime)
+				
 		{
-			System.out.println("The given number "+n+" is not prime");
+			System.out.println("The given number "+n+" is prime");
 		}
 		else
 		{
 		
-			System.out.println("The given number "+n+" is prime");
+			System.out.println("The given number "+n+" is not prime");
 
 	}
 
