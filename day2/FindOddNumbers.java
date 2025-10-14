@@ -7,13 +7,13 @@ public class FindOddNumbers {
 		// TODO Auto-generated method stub
 		// declare the variable
 		int num;
-		for(num=1;num<=10;num++)
+		for(num=1;num<=10;num+2)
 		{
-			if(num%2==1)
-			{
-				System.out.println("Number "+num+" is odd");		}
+			
+				System.out.println("Number "+num+" is odd");		
 		}
 
 	}
 
 }
+
