@@ -6,22 +6,20 @@ public class FindFibonacciSeries {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] fib_no = new int[8];
-		fib_no[0]=0;
-		fib_no[1]=1;
-		
-		
+		int temp,n=8;
+		int prev=0,next=1;
+		System.out.println("The fibonacci Series of the number "+n+" :");
+		System.out.println(prev+"\n"+next);
 		for(int i =2;i<8;i++)
 		{
-		fib_no[i]=fib_no[i-1]+fib_no[i-2];
+		temp=prev+next;
+		System.out.println(temp);
+		prev=next;
+		next=temp;
 	    }
 		
-		for(int i=0;i<8;i++)
-		{
-			System.out.println(fib_no[i]);
+	
 		}
-		
-
-	}
 
 }
+
