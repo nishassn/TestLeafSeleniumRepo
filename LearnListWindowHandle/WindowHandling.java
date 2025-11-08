@@ -1,6 +1,7 @@
 package LearnListWindowHandle;
 
 import java.time.Duration;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -47,30 +48,28 @@ public class WindowHandling {
 	//Thread.sleep(8000);
 	//- Click on the widget of the "From Contact". 
      driver.findElement(By.xpath("//input[@name='partyIdFrom']/following::img")).click();
-	
+     
+     String parentWindow=driver.getWindowHandle();
+     
+     Set<String> windowId=driver.getWindowHandles();
      Thread.sleep(15000);
-	//- Click on the first resulting contact. 
-	driver.findElement(By.xpath("//div[contains(@class,'x-grid3-cell-i')]/following::a")).click();
-	
-	//- Click on the widget of the "To Contact". 
-	//driver.findElement(By.xpath("//a[contains(text(),'Merge Contacts')]")).click();
-	
-	//- Click on the second resulting contact. 
-	//driver.findElement(By.xpath("//a[contains(text(),'Merge Contacts')]")).click();
-	
-	//- Click on the Merge button.
-	//driver.findElement(By.xpath("//a[contains(text(),'Merge Contacts')]")).click();
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
+     
+     for(String id:windowId)
+     {
+    	if(!id.equals(parentWindow))
+    	{
+    		driver.switchTo().window(id);
+    		//- Click on the first resulting contact.
+    	
+    		driver.findElement(By.xpath("//a[@class='linktext']")).click();
+    		
+    	driver.close();
+    	}
+   
+     }
+ 
+	driver.switchTo().defaultContent();
 	}
 
 }
+
